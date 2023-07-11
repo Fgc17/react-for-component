@@ -1,6 +1,6 @@
 # For Component for React
 
-This package provides a utility component that simplifies the usage of .map() function in React. It allows you to iterate over an array of items and render a component for each item, with the flexibility of providing a fallback component in case the array is empty.
+This package provides a utility component that simplifies the usage of .map() function in React. It allows you to iterate over an array of items and render a component for each item, with the flexibility of providing a fallback component in case the array is empty and also automatically assign keys with the identifier prop.
 
 ## Install
 
@@ -10,7 +10,7 @@ You can add this component to your project by simply copying the code above into
 
 Here's an example of how to use the `For` component:
 
-```jsx
+```tsx
 import { For } from './For';
 
 const fruits = ['Apple', 'Banana', 'Cherry'];
@@ -29,6 +29,24 @@ export default App;
 ```
 
 In this example, the `For` component will render a `div` for each fruit in the `fruits` array. If the array were empty, it would render the "No fruits found." message.
+
+Using the identifier prop:
+
+```tsx
+import { For } from './For';
+
+const people = ['John', 'Luke', 'Matthew'];
+
+function App() {
+  return (
+    <For each={fruits} fallback={<div>No fruits found.</div>}>
+      {(fruit) => <p>{fruit}</p>}
+    </For>
+  );
+}
+
+export default App;
+```
 
 ## API
 
