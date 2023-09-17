@@ -1,0 +1,22 @@
+{
+  "name": "@ferstack/react-for",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "react": "18.2.0"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "files": [
+    "src"
+  ],
+  "devDependencies": {
+    "@types/react": "18.2.21",
+    "@changesets/cli": "2.26.2"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
