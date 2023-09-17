@@ -7,7 +7,7 @@ interface ForProps<T> {
   fallback?: JSX.Element;
 }
 
-export default function For<T>({ each, children, identifier, fallback }: ForProps<T>) {
+export function For<T>({ each, children, identifier, fallback }: ForProps<T>) {
   const id = useId()
   
   if (!each[0]) return fallback;
@@ -16,5 +16,3 @@ export default function For<T>({ each, children, identifier, fallback }: ForProp
   
   return each.map((element, index) => children(element, index));
 }
-
-export { For };
