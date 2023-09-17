@@ -1,4 +1,4 @@
-import { Fragment } from "react";
+import React, { Fragment, useId, JSX } from "react";
 
 interface ForProps<T> {
   each: T[];
@@ -8,11 +8,13 @@ interface ForProps<T> {
 }
 
 export default function For<T>({ each, children, identifier, fallback }: ForProps<T>) {
+  const id = useId()
+  
   if (!each[0]) return fallback;
 
   if(identifier) return each.map((element, index) => <Fragment key={identifier + index}>{children(element, index)}</Fragment>); 
   
-  return each.map((element, index) =>  children(element, index));
+  return each.map((element, index) => children(element, index));
 }
 
 export { For };
